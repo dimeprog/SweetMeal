@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './category_meal_screen.dart';
+import '../screens/category_meal_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -32,7 +32,7 @@ class CategoryItem extends StatelessWidget {
               color: Colors.black54,
               fontWeight: FontWeight.bold,
               fontFamily: 'RobotoCondensed',
-              fontSize: 20),
+              fontSize: 24),
         ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
