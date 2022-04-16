@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sweetmeal/models/category.dart';
 
 class CategoryMealScreen extends StatelessWidget {
+  static const routeName = '/category_meal';
   // final String categoryId;
   // final String categoryTitle;
   // CategoryMealScreen({
