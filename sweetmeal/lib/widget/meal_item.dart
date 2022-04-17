@@ -1,15 +1,16 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:sweetmeal/screens/meal_detail_screen.dart';
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
   MealItem({
+    required this.id,
     required this.affordability,
     required this.complexity,
     required this.duration,
@@ -43,7 +44,13 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void selectMeal() {}
+  void selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      MealDetailScreen.routeName,
+      arguments: id,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -146,7 +153,7 @@ class MealItem extends StatelessWidget {
               )),
         ]),
       ),
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
     );
   }
 }
