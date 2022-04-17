@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sweetmeal/screens/category_meal_screen.dart';
+import 'package:sweetmeal/screens/meal_detail_screen.dart';
 import './screens/categories_screen.dart';
 
 void main() {
@@ -14,20 +16,38 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SweetMeal',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
         accentColor: Colors.amber,
-        canvasColor: const Color.fromRGBO(225, 254, 221, 1),
-        textTheme: ThemeData.light().textTheme.copyWith(
-              titleMedium: const TextStyle(
-                fontFamily: 'Robotocondensed',
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              bodyText2: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-            ),
+        // colorScheme: ColorScheme.fromSwatch(
+        //   primarySwatch: Colors.pink,
+        // ).copyWith(
+        //   secondary: Colors.amber,
+        // ),
+        // textTheme: TextTheme(
+        //   bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+        //   bodyText2: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+        //   titleMedium: const TextStyle(
+        //     fontFamily: 'RobotoCondensed',
+        //     fontSize: 20,
+        //   ),
+        // ),
+        // typography: Typography(
+        //   white: TextTheme(
+        //     bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+        //     bodyText2: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+        //     titleMedium: const TextStyle(
+        //       fontFamily: 'RobotoCondensed',
+        //       fontSize: 20,
+        //     ),
+        //   ),
+        // ),
       ),
-      home: CatagoriesScreen(),
+      // home: CatagoriesScreen(),
+      routes: {
+        '/': (context) => CatagoriesScreen(),
+        CategoryMealScreen.routeName: (context) => CategoryMealScreen(),
+        MealDetailScreen.routeName: (context) => MealDetailScreen(),
+      },
     );
   }
 }
