@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sweetmeal/screens/category_meal_screen.dart';
-import 'package:sweetmeal/screens/meal_detail_screen.dart';
+import 'package:sweetmeal/screens/tabs_screen.dart';
+import './screens/category_meal_screen.dart';
+import './screens/favourite_screen.dart';
+import './screens/meal_detail_screen.dart';
 import './screens/categories_screen.dart';
 
 void main() {
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SweetMeal',
+
       theme: ThemeData(
+        fontFamily: 'RobotoCondensed',
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
         // colorScheme: ColorScheme.fromSwatch(
@@ -44,7 +48,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: CatagoriesScreen(),
       routes: {
-        '/': (context) => CatagoriesScreen(),
+        '/': (context) => TabsScreen(),
         CategoryMealScreen.routeName: (context) => CategoryMealScreen(),
         MealDetailScreen.routeName: (context) => MealDetailScreen(),
       },
