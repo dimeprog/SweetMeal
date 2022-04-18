@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'SweetMeal',
 
       theme: ThemeData(
-        fontFamily: 'RobotoCondensed',
+        fontFamily: 'Raleway',
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
         // colorScheme: ColorScheme.fromSwatch(

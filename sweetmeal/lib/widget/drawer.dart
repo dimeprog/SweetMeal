@@ -33,6 +33,7 @@ class MainDrawer extends StatelessWidget {
             'Cook Up!!!!',
             style: TextStyle(
               color: Colors.pinkAccent,
+              fontFamily: 'RobotoCondensed',
               fontSize: 30,
               fontWeight: FontWeight.w900,
             ),
@@ -44,12 +45,12 @@ class MainDrawer extends StatelessWidget {
         _buildDrawerLink(
           'Meal',
           Icons.restaurant,
-          () => Navigator.of(context).pop(),
+          () => Navigator.of(context).pushReplacementNamed('/'),
         ),
         _buildDrawerLink(
           'Filter',
           Icons.filter,
-          () => Navigator.of(context).pushNamed(
+          () => Navigator.of(context).pushReplacementNamed(
             FilterScreen.routeName,
           ),
         ),

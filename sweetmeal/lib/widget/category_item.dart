@@ -29,10 +29,7 @@ class CategoryItem extends StatelessWidget {
         child: Text(
           title,
           style: const TextStyle(
-              color: Colors.black54,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'RobotoCondensed',
-              fontSize: 24),
+              color: Colors.black54, fontWeight: FontWeight.w900, fontSize: 20),
         ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
