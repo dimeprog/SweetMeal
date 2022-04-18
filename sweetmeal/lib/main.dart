@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/filter_screen.dart';
 import 'package:sweetmeal/screens/tabs_screen.dart';
 import './screens/category_meal_screen.dart';
 import './screens/favourite_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'SweetMeal',
 
       theme: ThemeData(
-        fontFamily: 'RobotoCondensed',
+        fontFamily: 'Raleway',
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
         // colorScheme: ColorScheme.fromSwatch(
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => TabsScreen(),
         CategoryMealScreen.routeName: (context) => CategoryMealScreen(),
         MealDetailScreen.routeName: (context) => MealDetailScreen(),
+        FilterScreen.routeName: (context) => FilterScreen(),
       },
     );
   }

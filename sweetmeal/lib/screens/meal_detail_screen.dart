@@ -75,26 +75,34 @@ class MealDetailScreen extends StatelessWidget {
     //  ////////////////////////////////////////
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(selectedMeal.title),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: 220,
-                width: double.infinity,
-                child: Image.network(
-                  selectedMeal.imageUrl,
-                  fit: BoxFit.cover,
-                ),
+      appBar: AppBar(
+        title: Text(selectedMeal.title),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 220,
+              width: double.infinity,
+              child: Image.network(
+                selectedMeal.imageUrl,
+                fit: BoxFit.cover,
               ),
-              _buildTitleHeader('INGREDIENT'),
-              _buildListSection(ingredientsListView),
-              _buildTitleHeader('STEPS'),
-              _buildListSection(stepsListView),
-            ],
-          ),
-        ));
+            ),
+            _buildTitleHeader('INGREDIENT'),
+            _buildListSection(ingredientsListView),
+            _buildTitleHeader('STEPS'),
+            _buildListSection(stepsListView),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).errorColor,
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
+        child: const Icon(Icons.delete),
+      ),
+    );
   }
 }

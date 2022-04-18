@@ -31,7 +31,14 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_page[selectedIndex]['title']),
+        title: Text(
+          _page[selectedIndex]['title'],
+          style: const TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+        ),
       ),
       drawer: MainDrawer(),
       body: _page[selectedIndex]['page'],
