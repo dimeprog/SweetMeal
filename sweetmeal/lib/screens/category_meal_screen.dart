@@ -40,29 +40,29 @@ class _CategoryMealScreenState extends State<CategoryMealScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            categoryTitle!,
-            style: const TextStyle(
-              fontFamily: 'RobotoCondensed',
-              fontWeight: FontWeight.bold,
-              color: Colors.black54,
-            ),
+      appBar: AppBar(
+        title: Text(
+          categoryTitle!,
+          style: const TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontWeight: FontWeight.bold,
+            color: Colors.black54,
           ),
         ),
-        body: ListView.builder(
-          itemBuilder: (context, index) {
-            return MealItem(
-              remoteItem: remoteItem,
-              id: categoryMeal![index].id,
-              affordability: categoryMeal![index].affordability,
-              complexity: categoryMeal![index].complexity,
-              duration: categoryMeal![index].duration,
-              imageUrl: categoryMeal![index].imageUrl,
-              title: categoryMeal![index].title,
-            );
-          },
-          itemCount: categoryMeal!.length,
-        ));
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return MealItem(
+            id: categoryMeal![index].id,
+            affordability: categoryMeal![index].affordability,
+            complexity: categoryMeal![index].complexity,
+            duration: categoryMeal![index].duration,
+            imageUrl: categoryMeal![index].imageUrl,
+            title: categoryMeal![index].title,
+          );
+        },
+        itemCount: categoryMeal!.length,
+      ),
+    );
   }
 }
