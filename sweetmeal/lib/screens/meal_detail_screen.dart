@@ -3,6 +3,10 @@ import '../models/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-details';
+  final Function toggleFavourite;
+  final Function isMealFavourite;
+  MealDetailScreen(
+      {required this.toggleFavourite, required this.isMealFavourite});
 
   Widget _buildListSection(child) {
     return Container(
@@ -98,10 +102,10 @@ class MealDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).errorColor,
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
-        child: const Icon(Icons.delete),
+        onPressed: () => toggleFavourite(mealId),
+        child: isMealFavourite(mealId)
+            ? const Icon(Icons.star)
+            : const Icon(Icons.star_border),
       ),
     );
   }
